@@ -5,10 +5,11 @@ $domain = "@email.com"
 $office = "Office/Branch Location"
 $jobtitle = "Test Dummy"
 $telephonenumber = "(XXX)XXX-XXXX"
-$description = "Desc for Account in AD"
+$description = "Desc for Account in AD."
 $logonscript = "Runs upon login, often inclues mapped shares."
 $homedriveletter = "Drive Letter"
 $homedirpath = "\\pathtohome\share"
+$mirrorgroupsfrom = "User to inherit AD groups from."
 
 New-ADUser -Name "$username" -GivenName "$firstname" -Surname "$lastname" `
 -Path "OU=end,OU=to,OU=start,DC=www,DC=google,DC=com" `
@@ -22,4 +23,7 @@ New-ADUser -Name "$username" -GivenName "$firstname" -Surname "$lastname" `
 -HomeDrive ($homedriveletter) `
 -HomeDirectory ("$homedirpath" + "$username") `
 -UserPrincipalName ("$username" + "$domain") `
--PassThru | Enable-ADAccount `
+-PassThru | Enable-ADAccount
+Get-ADUser -Identity ("$mirrorgroupsfrom") -Properties memberof |`
+Select-Object -ExpandProperty memberof |`
+Add-ADGroupMember -Members ("$username")
