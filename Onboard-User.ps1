@@ -6,8 +6,8 @@ $office = "Office/Branch Location"
 $jobtitle = "Test Dummy"
 $telephonenumber = "(XXX)XXX-XXXX"
 $description = "Desc for Account in AD"
-$logonscript = "Runs upon login, often inclues mapped shares"
-$homedriveletter = "DriveLetter"
+$logonscript = "Runs upon login, often inclues mapped shares."
+$homedriveletter = "Drive Letter"
 $homedirpath = "\\pathtohome\share"
 
 New-ADUser -Name "$username" -GivenName "$firstname" -Surname "$lastname" `
