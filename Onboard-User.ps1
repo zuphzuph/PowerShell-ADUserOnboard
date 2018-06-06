@@ -12,7 +12,7 @@ $homedirpath = "\\pathtohome\share"
 $mirrorgroupsfrom = "User to inherit AD groups from."
 
 New-ADUser -Name "$username" -GivenName "$firstname" -Surname "$lastname" `
--Path "OU=end,OU=to,OU=start,DC=www,DC=google,DC=com" `
+-Path "OU=end,OU=to,OU=start,DC=internal,DC=domain,DC=com" `
 -EmailAddress ("$username" + "$domain") `
 -OfficePhone ($telephonenumber) `
 -AccountPassword (Read-Host -AsSecureString "AccountPassword") `
