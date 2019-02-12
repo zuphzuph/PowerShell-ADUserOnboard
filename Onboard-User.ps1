@@ -5,10 +5,10 @@ $domain = "@email.com"
 $office = "Office/Branch Location"
 $jobtitle = "Test Dummy"
 $telephonenumber = "(XXX)XXX-XXXX"
-$description = "Desc for Account in AD."
-$logonscript = "Runs upon login, often inclues mapped shares."
+$description = "Title or Info"
+$logonscript = "filename.ps1"
 $homedriveletter = "Drive Letter"
-$homedirpath = "\\pathtohome\share"
+$homedirpath = "\\pathtohome\share\"
 $mirrorgroupsfrom = "User to inherit AD groups from."
 
 New-ADUser -Name "$username" -GivenName "$firstname" -Surname "$lastname" `
